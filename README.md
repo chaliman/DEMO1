@@ -5,11 +5,12 @@ This project is intended to create GCP Insfraestructure in automated way using J
 Terraform scripts were created, the GCP resources configured and integrated in a pipeline as described below:
 
 Create a service account (SA) with a custom role that has the minimum roles/permissions to 
-read from PubSub and write into GCS (Cloud Storage). 
-a. Create a Compute Engine instance setting up the SA created before.
-b. Create a PubSub Topic and Subscription.
-c. Create a Cron job which uses gcloud command to read the PubSub messages and write it into GCS as a json file
-d. Create a Cloud Scheduler to publish a new message to the PubSub topic every 1 minute at Mexico City time zone (CST). 
+read from PubSub and write into GCS (Cloud Storage).</br></br>
+
+a. Create a Compute Engine instance setting up the SA created before.</br>
+b. Create a PubSub Topic and Subscription.</br>
+c. Create a Cron job which uses gcloud command to read the PubSub messages and write it into GCS as a json file</br>
+d. Create a Cloud Scheduler to publish a new message to the PubSub topic every 1 minute at Mexico City time zone (CST) </br>
 
 Once this was configured via Terraform, Jenkins will run this in automated way running above commands/stages.
 - Terraform Init
