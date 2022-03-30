@@ -22,10 +22,10 @@ pipeline {
                 sh label: '',script: 'terraform apply -auto-approve'
             }
         }
-    stage('Terraform Destroy'){
-            steps{
-                sh label: '',script: 'terraform destroy'
-            }
-        }
+#    stage('Terraform Destroy'){
+#            steps{
+#                sh label: '',script: 'terraform destroy'
+#            }
+#        }
     }
 }
