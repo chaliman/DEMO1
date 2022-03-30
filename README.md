@@ -1,6 +1,5 @@
-# DEMO1
+# RD GCP 5 - Demo
 
-RD GCP 5 - Demo
 This project is intended to create GCP Insfraestructure in automated way using Jenkins and Terraform.
 Terraform scripts were created, the GCP resources configured and integrated in a pipeline as described below:
 
