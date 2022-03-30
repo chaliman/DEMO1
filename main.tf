@@ -1,4 +1,6 @@
 #Service account & Custome Role
+#https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
+#https://stackoverflow.com/questions/61003081/how-to-properly-create-gcp-service-account-with-roles-in-terraform
 resource "google_service_account" "sa-demo1" {
   account_id    = "sa-demo1"
   display_name  = "Demo 1 Service Account"
@@ -60,6 +62,7 @@ resource "google_storage_bucket" "bucket-rbarrientos1-demo" {
 }
 
 #PubSub Topic & Subscription
+#https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/pubsub_topic
 resource "google_pubsub_topic" "pubsub-topic-demo1" {
   name = "pubsub-topic-demo1"
 
@@ -70,6 +73,7 @@ resource "google_pubsub_topic" "pubsub-topic-demo1" {
   #Cannot be more than 7 days or less than 10 minutes.
 }
 
+#https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/pubsub_subscription
 resource "google_pubsub_subscription" "subscription-demo1" {
   name  = "subscription-demo1"
   topic = google_pubsub_topic.pubsub-topic-demo1.name
@@ -107,7 +111,8 @@ resource "google_cloud_scheduler_job" "demo1-job" {
   time_zone     = "America/Mexico_City"
 }
 
-#Compute Engine Creation
+#Compute Engine Creation (VM)
+#https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started#creating-a-vm-instance
 resource "google_compute_instance" "demo1-instance" {
   name          = "demo1-instance"
   machine_type  = "e2-micro"
