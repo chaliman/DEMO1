@@ -125,9 +125,9 @@ resource "google_compute_instance" "demo1-instance" {
   network_interface {
     network = "default"
 
-    access_config {
-      // Ephemeral IP
-    }
+    #access_config {
+    #  // Ephemeral IP
+    #}
   }
   metadata_startup_script = file("script.sh")
   tags = ["terraform-compute-jobs"]
