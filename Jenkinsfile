@@ -29,7 +29,7 @@ pipeline {
 	}
     	stage(' ---------- Terraform Destroy ---------- '){
             steps{
-                sh label: '',script: 'terraform destroy -force'
+                sh label: '',script: 'terraform destroy -auto-approve'
             }
         }
     }
