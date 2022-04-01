@@ -4,25 +4,6 @@ resource "google_service_account" "sa-demo1" {
   display_name  = "Demo 1 Service Account"
 }
 
-/* resource "google_project_iam_policy" "project" {
-  project     = "rosalio-barrientos-epam-rd5"
-  policy_data = "${data.google_iam_policy.demo-policy.policy_data}"
-}
-data "google_iam_policy" "demo-policy" {
-  binding {
-    role = "roles/pubsub.editor"
-    members = ["serviceAccount:${google_service_account.sa-demo1.email}"]
-  }
-  binding {
-    role = "roles/storage.objectAdmin"
-    members = ["serviceAccount:${google_service_account.sa-demo1.email}"]
-  }
-  binding {
-    role = "roles/storage.admin"
-    members = ["serviceAccount:${google_service_account.sa-demo1.email}"]
-  }
-} 
-
 resource "google_project_iam_binding" "demo_pubsub" {
   project   = "rosalio-barrientos-epam-rd5"
   role      = "roles/pubsub.editor"
